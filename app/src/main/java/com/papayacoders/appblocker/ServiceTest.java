@@ -39,7 +39,7 @@ public class ServiceTest extends Service {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY;
     }
 
     private Timer mTimer;
@@ -79,7 +79,7 @@ public class ServiceTest extends Service {
         NotificationChannel chan = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             chan = new NotificationChannel(getPackageName(),
-                    "MusicPro", NotificationManager.IMPORTANCE_MIN);
+                    "MusicPro", NotificationManager.IMPORTANCE_HIGH );
             chan.setShowBadge(false);
             chan.setLightColor(-16776961);
             chan.setLockscreenVisibility(0);

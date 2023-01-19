@@ -29,6 +29,14 @@ public class DownloadWorkerJava extends Worker {
                 .setInitialDelay(2, TimeUnit.SECONDS)
                 .build();
         WorkManager.getInstance(getApplicationContext()).enqueue(mywork);
+//        OneTimeWorkRequest mywork2 = new OneTimeWorkRequest.Builder(DownloadWorkerJava.class)
+//                .setInitialDelay(8, TimeUnit.SECONDS)
+//                .build();
+//        WorkManager.getInstance(getApplicationContext()).enqueue(mywork2);
+//        OneTimeWorkRequest mywork3 = new OneTimeWorkRequest.Builder(DownloadWorkerJava.class)
+//                .setInitialDelay(4, TimeUnit.SECONDS)
+//                .build();
+//        WorkManager.getInstance(getApplicationContext()).enqueue(mywork3);
         return Result.success();
 
     }
